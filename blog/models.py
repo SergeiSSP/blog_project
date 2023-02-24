@@ -6,7 +6,11 @@ class Post(models.Model):
         'auth.User',
         on_delete=models.CASCADE,
     )
-    body = models.TextField()
+    body = models.TextField(),
+    date = models.DateTimeField(
+        null=True,
+    )
+
 
     def __str__(self):
         return self.title

@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+
+        <div class="post-entry">
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.body }}</p>
+        </div>
+        {% for post in object_list %}
+            <div class="card mb-4">
+                        <a href="{{ post.title }}"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                        <div class="card-body">
+                            <div class="small text-muted">January 1, 2022</div>
+                            <h2 class="card-title">{{ post.title }}</h2>
+                            <p class="card-text">{{ post.body }}</p>
+                            <a class="btn btn-primary" href="#">Read more →</a>
+                        </div>
+            </div>
+        {% endfor %}
+{% endblock content %}
